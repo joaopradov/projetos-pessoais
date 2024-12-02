@@ -6,6 +6,8 @@ Propósito: Consolidar conhecimentos em lógica de programação e estrutura da 
 
 Funcionalidades:
 
-Menu interativo para selecionar operações.
-Validação para evitar divisão por zero.
-Estrutura modular e fácil de entender.
+- Menu interativo para selecionar operações.
+
+- Validação para evitar divisão por zero.
+
+- Estrutura modular e fácil de entender.
