@@ -4,7 +4,7 @@ Este repositório contém um projeto desenvolvido como parte do curso de **Fulls
 **Travelgram** é um projeto inspirado no Instagram, desenvolvido para ser uma rede social direcionada exclusivamente a apaixonados por viagens. O foco principal desta aplicação é fornecer uma experiência visual e interativa para compartilhar destinos incríveis, culturas e gastronomias ao redor do mundo.
 
 <p align="center">
-  <img src="assets/Thumbnail.jpg" alt="Thumbnail do projeto">
+  <img src="assets/Cover.jpg" alt="Thumbnail do projeto">
 </p>
 
 ## 📋 Sobre o Projeto
