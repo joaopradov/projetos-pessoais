@@ -16,13 +16,18 @@
 
 .text-2xl{
     font: var(--h1);
+    text-align: justify;
+
 }
 
 .text-xl{
     font: var(--h2);
+    text-align: justify;
 }
 .text-lg{
     font: var(--h3);
+    text-align: justify;
+
 }
 
 .text-sm{
