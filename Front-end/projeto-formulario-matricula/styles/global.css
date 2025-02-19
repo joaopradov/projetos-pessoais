@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root{
     --brand-light: #f67841;
     --brand-mid: #f3541c;
@@ -26,4 +32,8 @@
     --font-family: 'Poppins', 'sans-serif';
     --text: 400 1rem/1.5 var(--font-family);
     --text-sm: 400 .875rem/ 1.4 var(--font-family);
+}
+
+body{
+    overflow: hidden;
 }
