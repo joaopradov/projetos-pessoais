@@ -24,3 +24,14 @@ textarea:focus {
     border: .125rem solid var(--stroke-color-highlight);
     outline-offset: .1px;
 }
+
+input[type="date"]{
+    position: relative;
+    &::webkit-calendar-picker-indicator {
+        opacity: 0%;
+    }
+    /*     position: absolute;
+        background: url(../../assets/icons/calendar-03.svg) center/contain;
+        right: 1rem;
+    } */
+}
