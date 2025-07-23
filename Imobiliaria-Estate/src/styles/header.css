@@ -147,6 +147,7 @@
 @media (max-width: 425px) {
     .nav {
         max-width: 24.375rem;
+        width: 100%;
     }
 
     .nav-menu img {
@@ -154,15 +155,41 @@
         height: 2.5rem;
     }
 
-    .nav-list,
-    .btn-primary {
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        text-align: center;
+
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        flex-direction: column;
         padding: 1rem;
+        z-index: 999;
+        background-color: var(--neutral-800);
+    }
+
+    .btn-primary {
+        margin-top: 1rem;
+        justify-content: center;
+
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        z-index: 999;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .btn-primary.active {
+        display: inline-flex;
     }
 
     .hamburguer {
@@ -170,3 +197,4 @@
         margin-left: auto;
     }
 }
+
