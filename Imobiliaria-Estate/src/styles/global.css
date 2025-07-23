@@ -1,0 +1,68 @@
+:root {
+    --font-family: "THICCCBOI", sans-serif;
+
+    --primary-color: #f15a29;
+    --secondary-color1: #e6440f;
+    --secondary-color2: #fef4f1;
+
+    --neutral-800: #070707;
+    --neutral-700: #303030;
+    --neutral-600: #5a5a5a;
+    --neutral-500: #838383;
+    --neutral-400: #acacac;
+    --neutral-300: #d6d6d6;
+    --neutral-200: #f3f3f3;
+    --neutral-100: #ffffff;
+
+    --heading-h1: 700 5.625rem/116% var(--font-family);
+    --heading-h2: 700 4.375rem/125% var(--font-family);
+    --heading-h3: 700 3.125rem/125% var(--font-family);
+    --heading-h4: 700 2rem/125% var(--font-family);
+    --heading-h5: 700 1.75rem/125% var(--font-family);
+    --heading-h6: 700 1.5rem/125% var(--font-family);
+
+    --paragraph-large: 400 1.5rem/150% var(--font-family);
+    --paragraph-default: 400 1.125rem/150% var(--font-family);
+    --paragraph-small: 400 0.875rem/150% var(--font-family);
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 2rem 6.25rem;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 1024px;
+        padding: 2rem 3.125rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .container {
+        max-width: 850px;
+        padding: 1.5rem 2.25rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .container {
+        max-width: 425px;
+        padding: 1rem 1.5rem;
+    }
+}
