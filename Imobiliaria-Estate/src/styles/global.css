@@ -44,6 +44,9 @@ html {
     max-width: 90rem;
     margin: 0 auto;
     padding: 2rem 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @media (max-width: 1024px) {
