@@ -1,9 +1,6 @@
-// Mobile menu state
 let isMobileMenuOpen = false;
 
-// Get active header and its mobile menu (funciona com qualquer header na página)
 function getActiveHeaderElements() {
-    // Procura por qualquer header na página, independente do ID
     const header = document.querySelector('header') || 
                   document.querySelector('.header') ||
                   document.getElementById('header-v2') ||
@@ -20,13 +17,12 @@ function getActiveHeaderElements() {
     return { activeHeader, activeMobileMenu, activeMobileMenuBtn };
 }
 
-// Toggle mobile menu
 function toggleMobileMenu() {
-    console.log('toggleMobileMenu called'); // Debug
+    console.log('toggleMobileMenu called');
     
     const { activeMobileMenu, activeMobileMenuBtn } = getActiveHeaderElements();
     
-    console.log('Elements found:', { // Debug
+    console.log('Elements found:', {
         menu: activeMobileMenu ? 'found' : 'not found',
         btn: activeMobileMenuBtn ? 'found' : 'not found'
     });
@@ -43,19 +39,18 @@ function toggleMobileMenu() {
         activeMobileMenuBtn.classList.add('active');
         document.body.style.overflow = 'hidden';
         document.body.classList.add('mobile-menu-open');
-        console.log('Mobile menu opened'); // Debug
+        console.log('Mobile menu opened');
     } else {
         activeMobileMenu.classList.remove('active');
         activeMobileMenuBtn.classList.remove('active');
         document.body.style.overflow = 'auto';
         document.body.classList.remove('mobile-menu-open');
-        console.log('Mobile menu closed'); // Debug
+        console.log('Mobile menu closed');
     }
 }
 
-// Close mobile menu
 function closeMobileMenu() {
-    console.log('closeMobileMenu called'); // Debug
+    console.log('closeMobileMenu called');
     
     const { activeMobileMenu, activeMobileMenuBtn } = getActiveHeaderElements();
     
@@ -67,10 +62,9 @@ function closeMobileMenu() {
     document.body.style.overflow = 'auto';
     document.body.classList.remove('mobile-menu-open');
     
-    console.log('Mobile menu closed'); // Debug
+    console.log('Mobile menu closed');
 }
 
-// Set active navigation item based on current page
 function setActiveNavItem() {
     const currentPath = window.location.pathname;
     let currentPage = currentPath.split('/').pop() || 'index.html';
@@ -78,45 +72,37 @@ function setActiveNavItem() {
     if (currentPage === '' || currentPage === '/' || currentPath === '/') {
         currentPage = 'index.html';
     }
-    
-    // Remove active class from all nav links
+
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
     navLinks.forEach(link => link.classList.remove('active'));
-    
-    // Add active class based on current page
+
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        
-        // Home page detection
+
         if ((href === './index.html' || href === 'index.html' || href === '../index.html' || href === '../../index.html') && 
             (currentPage === 'index.html' || currentPage === '' || currentPath === '/' || currentPath.endsWith('/index.html'))) {
             link.classList.add('active');
         }
-        
-        // About page detection
+
         if ((href === './src/pages/about.html' || href === 'about.html' || href === '../about.html' || href === './about.html') && 
             currentPath.includes('about.html')) {
             link.classList.add('active');
         }
-        
-        // Properties page detection
+
         if ((href.includes('properties.html')) && currentPath.includes('properties.html')) {
             link.classList.add('active');
         }
-        
-        // Agents page detection
+
         if ((href.includes('agents.html')) && currentPath.includes('agents.html')) {
             link.classList.add('active');
         }
-        
-        // Blog page detection
+
         if ((href.includes('blog.html')) && currentPath.includes('blog.html')) {
             link.classList.add('active');
         }
     });
 }
 
-// Close mobile menu when clicking outside
 document.addEventListener('click', function(event) {
     if (!isMobileMenuOpen) return;
     
@@ -129,27 +115,23 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Close mobile menu on window resize
 window.addEventListener('resize', function() {
     if (window.innerWidth > 425 && isMobileMenuOpen) {
         closeMobileMenu();
     }
 });
 
-// Add click event listeners to navigation links
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            
-            // Close mobile menu for any navigation
+
             if (isMobileMenuOpen) {
                 closeMobileMenu();
             }
-            
-            // For hash links or empty links, prevent default
+
             if (href.startsWith('#') || href === '') {
                 e.preventDefault();
             }
@@ -157,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Header scroll effect
 let lastScrollTop = 0;
 let scrollTimeout;
 
@@ -185,7 +166,6 @@ window.addEventListener('scroll', function() {
     }, 150);
 });
 
-// Prevent scroll when mobile menu is open
 function preventScroll(e) {
     if (isMobileMenuOpen) {
         e.preventDefault();
@@ -194,7 +174,6 @@ function preventScroll(e) {
 
 document.addEventListener('touchmove', preventScroll, { passive: false });
 
-// Get Started button functionality
 document.addEventListener('DOMContentLoaded', function() {
     const getStartedButtons = document.querySelectorAll('.btn-primary, .mobile-btn-primary');
     
@@ -214,7 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Keyboard accessibility
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && isMobileMenuOpen) {
         closeMobileMenu();
@@ -227,11 +205,9 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing...'); // Debug
-    
-    // Debug: Check what elements exist
+    console.log('DOM loaded, initializing...');
+
     const { activeHeader, activeMobileMenu, activeMobileMenuBtn } = getActiveHeaderElements();
     console.log('Page initialization:', {
         header: activeHeader ? activeHeader.tagName + '#' + activeHeader.id : 'not found',
@@ -239,11 +215,9 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuBtn: activeMobileMenuBtn ? 'found' : 'not found',
         currentPath: window.location.pathname
     });
-    
-    // Set active navigation item
+
     setActiveNavItem();
-    
-    // Ensure mobile menu is closed
+
     if (activeMobileMenu && activeMobileMenuBtn) {
         activeMobileMenu.classList.remove('active');
         activeMobileMenuBtn.classList.remove('active');
@@ -251,8 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('mobile-menu-open');
         isMobileMenuOpen = false;
     }
-    
-    // Add loading animation
+
     if (activeHeader) {
         activeHeader.style.opacity = '0';
         activeHeader.style.transform = 'translateY(-20px)';
@@ -265,7 +238,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Debug function - chame no console para verificar
 window.debugHeader = function() {
     const { activeHeader, activeMobileMenu, activeMobileMenuBtn } = getActiveHeaderElements();
     console.log('=== DEBUG HEADER ===');
@@ -275,8 +247,7 @@ window.debugHeader = function() {
     console.log('Is mobile menu open:', isMobileMenuOpen);
     console.log('Current path:', window.location.pathname);
     console.log('Window width:', window.innerWidth);
-    
-    // Test click on mobile menu button
+
     if (activeMobileMenuBtn) {
         console.log('Mobile menu button click listener:', activeMobileMenuBtn.onclick);
         console.log('Mobile menu button classes:', activeMobileMenuBtn.className);
