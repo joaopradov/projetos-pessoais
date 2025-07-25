@@ -14,7 +14,7 @@
     --neutral-200: #f3f3f3;
     --neutral-100: #ffffff;
 
-    --heading-h1: 700 5.625rem/116% var(--font-family);
+    --heading-h1: 700 90px/1.16 var(--font-family);
     --heading-h2: 700 4.375rem/125% var(--font-family);
     --heading-h3: 700 3.125rem/125% var(--font-family);
     --heading-h4: 700 2rem/125% var(--font-family);
@@ -28,10 +28,16 @@
 
 body {
     font-family: var(--font-family);
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 * {
@@ -44,9 +50,34 @@ html {
     max-width: 90rem;
     margin: 0 auto;
     padding: 2rem 6.25rem;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+h1 {
+    font: var(--heading-h1);
+}
+
+h2 {
+    font: var(--heading-h2);
+}
+
+h3 {
+    font: var(--heading-h2);
+}
+
+h4 {
+    font: var(--heading-h2);
+}
+
+h5 {
+    font: var(--heading-h2);
+}
+
+h6 {
+    font: var(--heading-h2);
 }
 
 @media (max-width: 1024px) {
