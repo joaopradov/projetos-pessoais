@@ -7,6 +7,12 @@ header {
     transition: all 0.3s ease;
 }
 
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .header-v2 {
     background-color: var(--neutral-800);
 }
@@ -16,8 +22,7 @@ header {
 }
 
 .header-v2 .nav-link {
-        color: var(--neutral-100);
-
+    color: var(--neutral-100);
 }
 
 .header-v2 .nav-link:hover,
@@ -58,7 +63,7 @@ header {
     cursor: pointer;
 }
 
-.logo-icone img{
+.logo-icone img {
     width: 32px;
     height: 32px;
     position: inherit;
@@ -239,7 +244,8 @@ header {
     color: var(--neutral-100);
 }
 
-@media (max-width: 1024px) {    
+/* Responsividade */
+@media (max-width: 1024px) {
     .nav-menu {
         gap: 32px;
     }
@@ -249,51 +255,67 @@ header {
     .nav-menu {
         gap: 28px;
     }
-    
+
     .nav-link {
         font-size: 14px;
     }
-    
+
     .btn-primary {
         padding: 10px 20px;
         font-size: 14px;
     }
-    
+
     .logo-text {
         font-size: 21px;
     }
-    
+
     .logo-icon {
         width: 29px;
         height: 29px;
     }
 }
 
-@media (max-width: 425px) {
+/* MOSTRA HAMBÚRGUER E ESCONDE MENU DESKTOP ATÉ 650px */
+@media (max-width: 650px) {
+    .nav-desktop {
+        display: none;
+    }
+
+    .btn-primary {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
     .container {
         height: 65px;
         padding: 0 16px;
     }
-    
-    .nav-desktop {
-        display: none;
-    }
-    
-    .btn-primary {
-        display: none;
-    }
-    
-    .mobile-menu-btn {
-        display: flex;
-    }
-    
+
     .logo-text {
         font-size: 20px;
     }
-    
+
     .logo-icon {
         width: 28px;
         height: 28px;
+    }
+}
+
+/* ESCONDE HAMBÚRGUER ACIMA DE 650px */
+@media (min-width: 651px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+
+    .nav-desktop {
+        display: flex;
+    }
+
+    .btn-primary {
+        display: flex;
     }
 }
 
