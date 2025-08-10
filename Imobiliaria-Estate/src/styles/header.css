@@ -1,9 +1,9 @@
 header {
+    padding: 1rem 0;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     z-index: 1000;
+    top: 0;
     transition: all 0.3s ease;
 }
 
@@ -11,27 +11,6 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.header-v2 {
-    background-color: var(--neutral-800);
-}
-
-.header-v2 .logo-text {
-    color: var(--neutral-100);
-}
-
-.header-v2 .nav-link {
-    color: var(--neutral-100);
-}
-
-.header-v2 .nav-link:hover,
-.header-v2 .nav-link.active {
-    color: var(--primary-color);
-}
-
-.header-v2 .hamburger-line {
-    background-color: var(--neutral-100);
 }
 
 .header-normal {
@@ -53,6 +32,27 @@ header .container {
 
 .header-normal .hamburger-line {
     background-color: var(--neutral-800);
+}
+
+.header-v2 {
+    background-color: var(--neutral-800);
+}
+
+.header-v2 .logo-text {
+    color: var(--neutral-100);
+}
+
+.header-v2 .nav-link {
+    color: var(--neutral-100);
+}
+
+.header-v2 .nav-link:hover,
+.header-v2 .nav-link.active {
+    color: var(--primary-color);
+}
+
+.header-v2 .hamburger-line {
+    background-color: var(--neutral-100);
 }
 
 .logo {
@@ -244,14 +244,13 @@ header .container {
     color: var(--neutral-100);
 }
 
-/* Responsividade */
 @media (max-width: 1024px) {
     .nav-menu {
         gap: 32px;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
     .nav-menu {
         gap: 28px;
     }
@@ -275,8 +274,7 @@ header .container {
     }
 }
 
-/* MOSTRA HAMBÚRGUER E ESCONDE MENU DESKTOP ATÉ 650px */
-@media (max-width: 650px) {
+@media (max-width: 750px) {
     .nav-desktop {
         display: none;
     }
@@ -304,8 +302,7 @@ header .container {
     }
 }
 
-/* ESCONDE HAMBÚRGUER ACIMA DE 650px */
-@media (min-width: 651px) {
+@media (min-width: 751px) {
     .mobile-menu-btn {
         display: none;
     }

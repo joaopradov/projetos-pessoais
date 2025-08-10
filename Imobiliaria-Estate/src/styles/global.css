@@ -45,7 +45,7 @@ body {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 2rem 6.25rem;
+    padding: 0 6.25rem; /* padding 2rem 6.25rem */
 }
 
 h1 { font: var(--heading-h1); }
@@ -70,6 +70,6 @@ h6 { font: var(--heading-h6); }
 
 @media (max-width: 1024px) {
     .container {
-        padding: 2rem 3.125rem;
+        padding: 0 3.125rem;
     }
 }
